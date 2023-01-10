@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PetaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[PetaController::class,'index'])->name('admin.index');
+Route::post('/storePeta',[PetaController::class,'store'])->name('peta.store');
+Route::post('/hapusPeta',[PetaController::class,'delete'])->name('peta.delete');
+Route::post('/editPeta',[PetaController::class,'edit'])->name('peta.edit');
+Route::get('/show/{id}',[petaController::class,'show'])->name('peta.show');

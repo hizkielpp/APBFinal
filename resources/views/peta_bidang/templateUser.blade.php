@@ -57,12 +57,20 @@ input, input:focus, input:hover, input:active {
         <div class="col-lg-8">
             <div style="border: 2px solid #c5ced6;width: 100%;border-radius: 10;height: 2em;">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input style="border: none;width: 95%;" class="inputNomorBidang"placeholder="Masukan Nomor Peta Bidang"/>
+              <input style="border: none;width: 95%;" id="input" class="inputNomorBidang"placeholder="Masukan Nomor Peta Bidang"/>
             </div>
           </div>
           <div class="col-lg-2" style="margin-bottom: 2em;">
-            <button class="btn" style="background-color: #2c88d9; color: white; margin-top: -0.2em; width: 100% !important;">Cari</button>
+            <button class="btn" id="cari" style="background-color: #2c88d9; color: white; margin-top: -0.2em; width: 100% !important;">Cari</button>
           </div>
     </div>
     </div>
-  </body>  
+  </body>
+<script type="text/javascript">$(document).on("click", "#cari", function () {
+  nomor = document.getElementById("input").value ;
+  var url = '{{ route("showToGuest") }}';
+  url = url+"?nomor="+nomor;
+  window.location.href = url;
+
+});
+</script>

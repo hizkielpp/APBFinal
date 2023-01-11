@@ -74,18 +74,22 @@
     }
   </style>
 </head>
-<body>
-  <i
+<body> 
+  <a href="{{ route('showToGuest') }}">
+    <i
     class="fa-solid fa-arrow-left fa-2xl"
     style="position: fixed; left: 1em; top: 1em"
   ></i>
+  </a>
+
   <div class="row" style="margin-top: 2em !important">
     <div class="col-lg-12">
-      <h1>PTB. 12345/10/22</h1>
-      <h5>Peta bidang tanah wilayah kabupaten sleman, kecamatan gamping</h5>
+      <h1>{{ $petaBidang->nomor }}</h1>
+      <h1>{{ $petaBidang->judul }}</h1>
+      <h5>{{ $petaBidang->deskripsi }}</h5>
     </div>
-    <div class="col-lg-12">
-      <img src="dist/img/oke.jpg" alt="" />
+    <div class="col-lg-12" style="min-height: 40em">
+        <iframe class="embed-responsive-item w-50 h-100 mx-auto" src="images/{{ $petaBidang->namaGambar }}"></iframe>
     </div>
   </div>
 

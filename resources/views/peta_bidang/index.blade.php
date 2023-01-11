@@ -128,7 +128,7 @@
             <div class="info">
               <a href="#" class="d-block"
                 >Selamat datang <br />
-                <b>Admin</b></a
+                <b>{{ $namaAdmin }}</b></a
               >
             </div>
           </div>
@@ -149,6 +149,15 @@
                   <i class="fa fa-map" aria-hidden="true"></i>
                   <p>
                     Peta Bidang
+                    <!-- <span class="right badge badge-danger">New</span> -->
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('signout') }}" class="nav-link">
+                  <i class="fa fa-map" aria-hidden="true"></i>
+                  <p>
+                    Logout
                     <!-- <span class="right badge badge-danger">New</span> -->
                   </p>
                 </a>
@@ -180,6 +189,11 @@
                   <p>{{ $message }}</p>
                 </div>
               @endif
+              @if ($message = Session::get('failed'))
+              <div class="alert alert-danger col-lg-12">
+                <p>{{ $message }}</p>
+              </div>
+            @endif
               @if ($errors->any())
               <div class="alert alert-danger col-lg-12">
                   <ul>
@@ -763,7 +777,6 @@
                     $('#nomorEdit').attr('value', data[0].nomor);
                     $('#judulEdit').attr('value',data[0].judul);
                     $('#deskripsiEdit').attr('value',data[0].deskripsi);
-                    $('#fileEdit').attr
                 }
             });
         });

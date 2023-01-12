@@ -81,7 +81,7 @@
     style="position: fixed; left: 1em; top: 1em"
   ></i>
   </a>
-
+  @if (isset($petaBidang))
   <div class="row" style="margin-top: 2em !important">
     <div class="col-lg-12">
       <h1>{{ $petaBidang->nomor }}</h1>
@@ -91,7 +91,13 @@
     <div class="col-lg-12" style="min-height: 40em">
         <iframe class="embed-responsive-item w-50 h-100 mx-auto" src="images/{{ $petaBidang->namaGambar }}"></iframe>
     </div>
+  </div>   
+  @else
+  <div class="col-lg-12">
+    <h1 class="mt-5">Maaf peta bidang tidak ditemukan</h1>
   </div>
+  @endif
+  
 
   <div style="top: 12em; position: relative"></div>
 </body>

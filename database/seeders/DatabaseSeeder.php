@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'nomor' => "PTB.12345/10/22",
             'judul' => "Peta Bidang 1",
             'deskripsi' => "Peta Bidang 1 merupakan peta yang diambil dari kecamatan x kabupaten y provinsi z",
-            'namaGambar' => "PetaBidang1",
+            'namaGambar' => "PetaBidang1.jpg",
             'created_at'=> now(),
             'updated_at' => now()
         ]);
@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'nomor' => "PTB.12346/11/22",
             'judul' => "Peta Bidang 2",
             'deskripsi' => "Peta Bidang 2 merupakan peta yang diambil dari kecamatan x kabupaten y provinsi z",
-            'namaGambar' => "PetaBidang2",
+            'namaGambar' => "PetaBidang2.jpg",
             'created_at'=> now(),
             'updated_at' => now()
         ]);
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'nomor' => "PTB.12347/11/22",
             'judul' => "Peta Bidang 3",
             'deskripsi' => "Peta Bidang 3 merupakan peta yang diambil dari kecamatan x kabupaten y provinsi z",
-            'namaGambar' => "PetaBidang3",
+            'namaGambar' => "PetaBidang3.jpg",
             'created_at'=> now(),
             'updated_at' => now()
         ]);

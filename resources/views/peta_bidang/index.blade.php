@@ -107,7 +107,7 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: auto !important">
         <!-- Brand Logo -->
-        <a href="index.html" class="brand-link d-flex align-items-center ml-2">
+        <a href="#" class="brand-link d-flex align-items-center ml-2">
           <i class="fas fa-globe-asia fa-lg"></i>
           <span class="brand-text font-weight-light ml-1"
             >Aplikasi Peta Bidang</span
@@ -155,7 +155,7 @@
               </li>
               <li class="nav-item">
                 <a href="{{ route('signout') }}" class="nav-link">
-                  <i class="fa fa-map" aria-hidden="true"></i>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
                   <p>
                     Logout
                     <!-- <span class="right badge badge-danger">New</span> -->

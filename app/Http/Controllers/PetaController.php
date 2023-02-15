@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class PetaController extends Controller
 {
+    public function search(Request $request){
+        if(!empty($request->input('keyword'))){
+            $hasil = DB::table('petaBidang')->where('nomor','like','%'.$request->input('keyword').'%')->get();
+            return response()->json($hasil);
+        }
+        else{
+            return response()->json([]);
+        }
+    }
     public function showToGuest(Request $request)
     {
         if($request->input("nomor"))

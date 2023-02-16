@@ -46,6 +46,12 @@ input, input:focus, input:hover, input:active {
     outline: none;
     box-shadow:none;
 }
+.hasilPencarian {
+  border: 1px solid #c5ced6;width: 100%;border-radius: 10;height: 2em;
+}
+ul {
+    list-style-type: none;
+}
  </style>
   
   </head>
@@ -57,7 +63,11 @@ input, input:focus, input:hover, input:active {
         <div class="col-lg-8">
             <div style="border: 2px solid #c5ced6;width: 100%;border-radius: 10;height: 2em;">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input style="border: none;width: 95%;" id="input" class="inputNomorBidang"placeholder="Masukan Nomor Peta Bidang"/>
+              <input style="border: none;width: 95%;" onkeyup="search(this.value)" id="input" class="inputNomorBidang"placeholder="Masukan Nomor Peta Bidang"/>
+            </div>
+            <div class="mt-0" >
+              <ul id="results">
+              </ul>
             </div>
           </div>
           <div class="col-lg-2" style="margin-bottom: 2em;">
@@ -72,5 +82,41 @@ input, input:focus, input:hover, input:active {
   url = url+"?nomor="+nomor;
   window.location.href = url;
 
+});
+</script>
+<script>
+  function resetResults(){
+    $('#results').html("")
+  }
+  function renderResults(results){
+    $('#results').html(results)
+  }
+  function search(keyword){
+    resetResults()
+    $.ajax({
+                url: 'cari?keyword='+keyword,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                  // console.log(data);
+                  console.log('cari?keyword='+keyword)
+                  var isi = "";
+                  data.forEach(element => {
+                    // console.log(element.nomor)
+                    isi += `<li class= "hasilPencarian" onclick="clicked(this.innerHTML)"">${element.nomor}</li>`;
+                  });
+                  renderResults(isi)
+                }
+            });
+  };
+  function clicked(inner){
+    console.log(inner);
+    document.getElementById('input').value = inner
+    resetResults()
+  }
+</script>
+<script>
+$( document ).ready(function() {
+    resetResults();
 });
 </script>

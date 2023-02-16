@@ -1,4 +1,6 @@
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <script
     src="https://kit.fontawesome.com/5fbcc24921.js"
     crossorigin="anonymous"
@@ -88,8 +90,8 @@
       <h1>{{ $petaBidang->judul }}</h1>
       <h5>{{ $petaBidang->deskripsi }}</h5>
     </div>
-    <div class="col-lg-12" style="min-height: 40em">
-        <iframe class="embed-responsive-item w-50 h-100 mx-auto" src="images/{{ $petaBidang->namaGambar }}"></iframe>
+    <div class="col-lg-12" style="min-height: 60em;" >
+        <img class="col-12" src="images/{{ petaBidang->namaGambar }}" alt="">
     </div>
   </div>   
   @else

@@ -23,8 +23,12 @@ Route::middleware(['checkAuth'])->group(function ()
     Route::post('/hapusPeta',[PetaController::class,'delete'])->name('peta.delete');
     Route::post('/editPeta',[PetaController::class,'edit'])->name('peta.edit');
     Route::get('/show/{id}',[petaController::class,'show'])->name('peta.show');
+    Route::get('/profile',function(){
+        return view('peta_bidang.profile');
+    })->name('peta.profile');
 });
 Route::get('/guest',[PetaController::class,'showToGuest'])->name('showToGuest');
+Route::get('/cari',[PetaController::class,'search'])->name('search');
 Route::get('/login',function(){
     return view('login');
 })->name('login');
